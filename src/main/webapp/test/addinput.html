@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh_CN">
+<meta charset="utf-8">
+<title> Angular动态添加输入框</title>
+ <link rel="stylesheet" href="/itfin_manager_ui/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/itfin_manager_ui/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="/itfin_manager_ui/plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/itfin_manager_ui/css/style.css">
+    
+    <!-- 引入angularjs -->
+    <script src="/itfin_manager_ui/plugins/angularjs/angular.min.js"></script>
+    <script src="/itfin_manager_ui/plugins/angularjs/angular-route.min.js"></script>
+    
+    <!-- 引入分页插件 -->
+    <!-- 分页样式 -->
+    <link rel="stylesheet" href="/itfin_manager_ui/plugins/angularjs/pagination.css">
+    <script src="/itfin_manager_ui/plugins/angularjs/pagination.js"></script>
+    
+    <script src="/itfin_manager_ui/js/base_pagination.js"></script>
+    <script src="/itfin_manager_ui/js/controller/testController.js"></script>
+   
+    
+	<script src="/itfin_manager_ui/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/itfin_manager_ui/plugins/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body >
+	<div class="form-group" ng-app="ftitApp" ng-controller="SendSafeMessageController">
+     <label class="col-md-2 control-label">答复内容:</label>
+     
+     <input type="text" class="form-control" ng-model="entity.username"/>
+     <input type="text" class="form-control" ng-model="entity.password"/>
+     
+     <div class="col-md-10">
+         <div ng-repeat="reply in fchat.replies">
+             <div class="form-group">
+                 <div class="col-md-12">
+                     <div class="col-md-1">
+                         <label for="reply{{$index + 1}}">回答{{$index + 1}}</label>
+                     </div>
+                     <div class="col-md-9">
+                         <input type="text" class="form-control" ng-model="reply.value"
+                                id="reply{{$index + 1}}" name="reply{{$index + 1}}" />
+                     </div>
+                     <div class="col-md-2 img-link">
+                         <a href="" ng-click="fchat.incrReply($index)">
+                             <img src="../img/add_plus_48px.ico" alt="plus" width="30px" height="30px" />
+                         </a>
+                         <a href="" ng-click="fchat.decrReply($index)" ng-show="fchat.canDescReply">
+                             <img src="../img/minus.ico" alt="minus" width="30px" height="30px"/>
+                         </a>
+                         <img src="../img/dis_minus.ico" alt="minus" width="30px" height="30px"
+                              ng-show="!fchat.canDescReply"/>
+                     </div>
+                </div>
+             </div>
+         </div>
+     <input type="hidden" id="replies" name="replies" value="{{fchat.combineReplies()}}" />
+     <input  id="replies" name="replies" value="{{fchat.combineReplies()}}" />
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+	var ftitAppModule = angular.module('ftitApp', []);
+	ftitAppModule.controller('SendSafeMessageController',
+		     function ($scope, $log) {
+		         $scope.fchat = new Object();
+		         $scope.fchat.replies = [{key: 0, value: ""}];
+		         // 初始化时由于只有1条回复，所以不允许删除
+		         $scope.fchat.canDescReply = false;
+		 
+		         // 增加回复数
+		         $scope.fchat.incrReply = function($index) {
+		             $scope.fchat.replies.splice($index + 1, 0,
+		                 {key: new Date().getTime(), value: ""});   // 用时间戳作为每个item的key
+		             // 增加新的回复后允许删除
+		             $scope.fchat.canDescReply = true;
+		         }
+		 
+		         // 减少回复数
+		         $scope.fchat.decrReply = function($index) {
+		             // 如果回复数大于1，删除被点击回复
+		             if ($scope.fchat.replies.length > 1) {
+		                 $scope.fchat.replies.splice($index, 1);
+		             }
+		             // 如果回复数为1，不允许删除
+		             if ($scope.fchat.replies.length == 1) {
+		                 $scope.fchat.canDescReply = false;
+		             }
+		         }
+		 
+		         $scope.fchat.combineReplies = function() {
+		             var cr = "";
+		             for (var i = 0; i < $scope.fchat.replies.length; i++) {
+		                 cr += "#" + $scope.fchat.replies[i].value;
+		             }
+		             cr = cr.substring(1);
+		             $log.debug("Combined replies: " + cr);
+		 
+		           return cr;
+		         }
+		     }
+		);
+
+</script>
+
+</html>

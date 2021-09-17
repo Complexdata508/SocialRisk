@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	
+	<settings>
+		<!-- 开启驼峰自动映射 -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- 二级缓存的总开关，被redis替代 -->
+		<!-- <setting name="cacheEnabled" value="false" /> -->
+	</settings>
+
+	<!--别名-->
+    <typeAliases>
+        <!--给com.cbhb.model包下的所有实体Bean取别名，别名为类名-->
+        <package name="com.complexdata.model" />
+    </typeAliases>
+    
+    <plugins>
+	   <!--  com.github.pagehelper为PageInterceptor类所在包名 -->
+	    <plugin interceptor="com.github.pagehelper.PageInterceptor">
+	        <property name="reasonable" value="true"/>
+	    </plugin>
+	    
+	    <!--Mybatis通用Mapper -->
+		<plugin interceptor="com.github.abel533.mapperhelper.MapperInterceptor">
+			<!-- 主键自增回写方法,默认值MYSQL,详细说明请看文档 
+			<property name="IDENTITY" value="MYSQL" />-->
+			<!-- 通用Mapper接口，多个通用接口用逗号隔开 -->
+			<property name="mappers" value="com.github.abel533.mapper.Mapper" />
+		</plugin>
+	</plugins>
+    
+
+	
+</configuration>
