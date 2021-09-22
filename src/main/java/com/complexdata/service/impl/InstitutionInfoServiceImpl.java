@@ -22,7 +22,7 @@ public class InstitutionInfoServiceImpl implements InstitutionInfoService {
 	private InstitutionInfoMapper institutionInfoMapper;
 	
 	/**
-	 * 鍒嗛〉鏌ヨ鏈烘瀯鎵�鏈変俊鎭�
+	 * 鍒嗛〉鏌ヨ鏈烘瀯鎵?鏈変俊鎭?
 	 */
 	@Override
 	public PageInfo<InstitutionInfo> getPageInstitutionInfo(int pageNum, int size) {
@@ -40,17 +40,17 @@ public class InstitutionInfoServiceImpl implements InstitutionInfoService {
 
 	public int addInstitutionInfo(InstitutionInfo institutionInfo){
 		if (institutionInfo==null) {
-			throw new ServiceException("淇濆瓨瀵硅薄涓嶈兘涓虹┖锛�");
+			throw new ServiceException("淇濆瓨瀵硅薄涓嶈兘涓虹┖锛?");
 		}
 		if (StringUtils.isEmpty(institutionInfo.getInstitutionNo())) {
-			throw new ServiceException("鏈烘瀯缂栧彿涓嶈兘涓虹┖锛�");
+			throw new ServiceException("鏈烘瀯缂栧彿涓嶈兘涓虹┖锛?");
 		}
 		institutionInfo.setLogno(TermSequenceUtil.createTermSeq());
 		return institutionInfoMapper.addInstitutionInfo(institutionInfo);
 	}
 
 	/**
-	 * 鏍规嵁鏈烘瀯鍙锋煡璇㈡満鏋勪俊鎭�
+	 * 鏍规嵁鏈烘瀯鍙锋煡璇㈡満鏋勪俊鎭?
 	 */
 	@Override
 	public InstitutionInfo getByInstitutionNo(String institutionNo) {
@@ -60,27 +60,27 @@ public class InstitutionInfoServiceImpl implements InstitutionInfoService {
 	}
 
 	/**
-	 * 鏍规嵁鏈烘瀯鍙蜂慨鏀规満鏋勪俊鎭�
+	 * 鏍规嵁鏈烘瀯鍙蜂慨鏀规満鏋勪俊鎭?
 	 */
 	@Override
 	public int updateByInstitutionNo(InstitutionInfo institutionInfo){
 		if (institutionInfo==null) {
-			throw new ServiceException("鏇存柊瀵硅薄涓嶈兘涓虹┖锛�");
+			throw new ServiceException("鏇存柊瀵硅薄涓嶈兘涓虹┖锛?");
 		}
 		if (StringUtils.isEmpty(institutionInfo.getInstitutionNo())) {
-			throw new ServiceException("鏈烘瀯缂栧彿涓嶈兘涓虹┖锛�");
+			throw new ServiceException("鏈烘瀯缂栧彿涓嶈兘涓虹┖锛?");
 		}
 		return institutionInfoMapper.updateByPrimaryKey(institutionInfo);
 	}
 
 	/**
-	 * 鏍规嵁鏈烘瀯鍙锋壒閲忓垹闄ゆ満鏋勪俊鎭�
+	 * 鏍规嵁鏈烘瀯鍙锋壒閲忓垹闄ゆ満鏋勪俊鎭?
 	 */
 	@Override
 	public int deleteByInstitutionNo(JSONArray institutionNosArray){
 
 		if ( institutionNosArray == null ||  institutionNosArray.size()<=0 ) {
-			throw new ServiceException("鏈烘瀯缂栧彿鍙傛暟閿欒锛�");
+			throw new ServiceException("鏈烘瀯缂栧彿鍙傛暟閿欒锛?");
 		}
 		
 		int j = 0;
