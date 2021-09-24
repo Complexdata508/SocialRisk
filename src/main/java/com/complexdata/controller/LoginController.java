@@ -5,10 +5,11 @@ import com.complexdata.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
+//@RequestMapping("/")
 public class LoginController {
 
     @Autowired
@@ -27,12 +28,14 @@ public class LoginController {
 
     @RequestMapping("/toRegister")
     public String toRegister(){
-        return null;
+        return "register";
     }
 
     @RequestMapping("/doRegister")
     public String doRegister(User user){
-        return null;
+
+        loginService.userRegister(user);
+        return "forward:/";
     }
 
 

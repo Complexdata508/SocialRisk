@@ -57,9 +57,17 @@
         <property name="url" value="${jdbc.url}" />
         <property name="username" value="${jdbc.username}" />
         <property name="password" value="${jdbc.password}" />
-        <property name="validationQuery" value="SELECT 1" />  
-        <property name="testWhileIdle" value="true" />  
+        <property name="validationQuery" value="SELECT 1" />
+        <property name="testWhileIdle" value="true" />
     </bean>
+<!--    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">-->
+<!--        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />-->
+<!--        <property name="url" value="jdbc:mysql://localhost:3306/SocialRisk?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;serverTimezone=Asia/Shanghai" />-->
+<!--        <property name="username" value="root" />-->
+<!--        <property name="password" value="123456" />-->
+<!--        <property name="validationQuery" value="SELECT 1" />-->
+<!--        <property name="testWhileIdle" value="true" />-->
+<!--    </bean>-->
 
     <!-- 声明式事务AOP配置 -->
     <aop:config>

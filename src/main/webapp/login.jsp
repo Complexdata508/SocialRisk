@@ -36,14 +36,9 @@
 							<div class="input-prepend"><span class="add-on loginpwd"></span>
 								<input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat">
 							</div>
-							<div class="setting">
-								 <div id="slider">
-									<div id="slider_bg"></div>
-									<span id="label">>></span> <span id="labelTip">拖动滑块验证</span>
-									</div>
-							</div>
 							<div class="logined">
-								<a class="sui-btn btn-block btn-xlarge btn-danger" href="doIndexUI.shtml" target="_blank">登&nbsp;&nbsp;录</a>
+								<a class="sui-btn btn-block btn-xlarge btn-primary" href="doLogin.shtml" target="_blank">登&nbsp;&nbsp;录</a>
+								<a class="sui-btn btn-block btn-xlarge btn-success" href="toRegister.shtml" target="_blank">注&nbsp;&nbsp;册</a>
 							</div>
 						</form> 
 
@@ -71,5 +66,9 @@
 
 
 </body>
-
+<style>
+	loginname{
+		background-image:url(./img/bussiness-man.png);background-position:-10px -201px
+	}
+</style>
 </html>

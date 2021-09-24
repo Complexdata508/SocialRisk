@@ -54,6 +54,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
+
 		</dependency>
 		
 		<!-- 数据库postgresql -->
@@ -239,6 +240,8 @@
 
 
 	<build>
+
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -249,18 +252,27 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.0.2</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-
-			
+<!--			<plugin>-->
+<!--				<groupId>org.apache.maven.plugins</groupId>-->
+<!--				<artifactId>maven-resources-plugin</artifactId>-->
+<!--				<version>3.0.2</version>-->
+<!--				<configuration>-->
+<!--					<encoding>UTF-8</encoding>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
-
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+<!--			<resource>-->
+<!--				<directory>src/main/java</directory>-->
+<!--				<includes>-->
+<!--					<include>**/*.xml</include>-->
+<!--				</includes>-->
+<!--				<filtering>false</filtering>-->
+<!--			</resource>-->
+		</resources>
 
 	</build>
 

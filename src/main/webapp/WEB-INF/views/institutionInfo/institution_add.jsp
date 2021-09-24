@@ -11,30 +11,30 @@
 	content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"
 	name="viewport">
 <link rel="stylesheet"
-	href="/itfin_manager_ui/plugins/bootstrap/css/bootstrap.min.css">
+	href="/SocialRisk/plugins/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet"
-	href="/itfin_manager_ui/plugins/adminLTE/css/AdminLTE.css">
+	href="/SocialRisk/plugins/adminLTE/css/AdminLTE.css">
 <link rel="stylesheet"
-	href="/itfin_manager_ui/plugins/adminLTE/css/skins/_all-skins.min.css">
-<link rel="stylesheet" href="/itfin_manager_ui/css/style.css">
+	href="plugins/adminLTE/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="/SocialRisk/css/style.css">
 
 <!-- 引入angularjs -->
-<script src="/itfin_manager_ui/plugins/angularjs/angular.min.js"></script>
-<script src="/itfin_manager_ui/plugins/angularjs/angular-route.min.js"></script>
+<script src="/SocialRisk/plugins/angularjs/angular.min.js"></script>
+<script src="/SocialRisk/plugins/angularjs/angular-route.min.js"></script>
 
 <!-- 引入分页插件 -->
 <!-- 分页样式 -->
 <link rel="stylesheet"
-	href="/itfin_manager_ui/plugins/angularjs/pagination.css">
-<script src="/itfin_manager_ui/plugins/angularjs/pagination.js"></script>
+	href="/SocialRisk/plugins/angularjs/pagination.css">
+<script src="/SocialRisk/plugins/angularjs/pagination.js"></script>
 
-<script src="/itfin_manager_ui/js/base_pagination.js"></script>
+<script src="/SocialRisk/js/base_pagination.js"></script>
 <script
-	src="/itfin_manager_ui/js/controller/testController.js"></script>
+	src="/SocialRisk/js/controller/testController.js"></script>
 
 
-<script src="/itfin_manager_ui/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="/itfin_manager_ui/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/SocialRisk/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/SocialRisk/plugins/bootstrap/js/bootstrap.min.js"></script>
 <style type="text/css">
 #myStyle{
 	margin-left: -7px;
