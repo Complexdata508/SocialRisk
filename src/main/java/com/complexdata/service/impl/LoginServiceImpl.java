@@ -19,7 +19,6 @@ public class LoginServiceImpl implements LoginService {
         User searchUser = new User();
         searchUser.setUsername(user.getUsername());
         User getUser = userMapper.selectOne(searchUser);
-
         if(getUser==null)
             return false;
 
