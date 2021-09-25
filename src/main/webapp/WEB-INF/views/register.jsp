@@ -103,7 +103,7 @@
     <form class="form-signin" action="doRegister.shtml" method="post">
         <!-- <h1 class="h3 mb-3 font-weight-normal">注册</h1> -->
         <label for="username" class="sr-only">Username</label>
-        <input type="" id="username" class="form-control" placeholder="用户名" required="" autofocus="" name="username">
+        <input type="" id="username" class="form-control" placeholder="用户名" required=" " autofocus="" name="username">
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="密码" required="" name="password">
 

@@ -29,9 +29,9 @@
                     控制面板
                     <small>首页</small>
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="doIndexUI.shtml"><i class="fa fa-dashboard"></i> 首页</a></li>
-                </ol>
+<%--                <ol class="breadcrumb">--%>
+<%--                    <li><a href="doIndexUI.shtml"><i class="fa fa-dashboard"></i> 首页</a></li>--%>
+<%--                </ol>--%>
             </section>
             <!-- 内容头部 /-->
 

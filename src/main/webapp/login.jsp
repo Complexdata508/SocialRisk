@@ -28,16 +28,16 @@
 				</ul>
 				<div class="tab-content tab-wraped">
 					
-					<div id="profile" class="tab-pane  active">
-						<form class="sui-form">
+					<div id="profile" class="tab-pane  active" >
+						<form class="sui-form" action="doLogin.shtml" method="post">
 							<div class="input-prepend"><span class="add-on loginname"></span>
-								<input id="prependedInput" type="text" placeholder="用户名" class="span2 input-xfat">
+								<input id="prependedInput" type="text" placeholder="用户名" class="span2 input-xfat"  required="required" name="username">
 							</div>
 							<div class="input-prepend"><span class="add-on loginpwd"></span>
-								<input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat">
+								<input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat"  required="required" name="password">
 							</div>
 							<div class="logined">
-								<a class="sui-btn btn-block btn-xlarge btn-primary" href="doLogin.shtml" target="_blank">登&nbsp;&nbsp;录</a>
+								<button class="sui-btn btn-block btn-xlarge btn-primary" type="submit" target="_blank">登&nbsp;&nbsp;录</button>
 								<a class="sui-btn btn-block btn-xlarge btn-success" href="toRegister.shtml" target="_blank">注&nbsp;&nbsp;册</a>
 							</div>
 						</form> 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 //@RequestMapping("/")
@@ -14,9 +15,13 @@ public class LoginController {
 
     @Autowired
     LoginService loginService;
-    @RequestMapping("/doLogin")
+    @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
     public String doLogin(User user, Model model){
-        if(loginService.userLogin(user))
+        if(user.getPassword().isEmpty()||user.getUsername().isEmpty()){
+            model.addAttribute("message","用户名或密码为空");
+            return "forward:/";
+        }
+        else if(loginService.userLogin(user))
             return "admin/index";
         else
         {

@@ -20,8 +20,8 @@ public class LoginServiceImpl implements LoginService {
         searchUser.setUsername(user.getUsername());
         User getUser = userMapper.selectOne(searchUser);
 
-        if(getUser!=null)
-            return true;
+        if(getUser==null)
+            return false;
 
         if(getUser.getPassword().equals(DigestUtil.md5Hex(user.getPassword())))//判断密码是否相同
             return true;

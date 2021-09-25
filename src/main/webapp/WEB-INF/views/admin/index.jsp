@@ -50,8 +50,8 @@
 		<!-- 页面头部 -->
 		<header class="main-header"> <!-- Logo --> <a href="#"
 			class="logo"> <!-- mini logo for sidebar mini 50x50 pixels --> <span
-			class="logo-mini"><b>社会风险指数模型</b></span> <!-- logo for regular state and mobile devices -->
-			<span class="logo-lg"><b>平台维护</b></span>
+			class="logo-mini"><b>管理</b></span> <!-- logo for regular state and mobile devices -->
+			<span class="logo-lg"><b>社会风险指数模型</b></span>
 		</a> <!-- Header Navbar: style can be found in header.less --> <nav
 			class="navbar navbar-static-top"> <!-- Sidebar toggle button-->
 		<a href="#" class="sidebar-toggle" data-toggle="offcanvas"
@@ -60,78 +60,78 @@
 
 		<div class="navbar-custom-menu">
 			<ul class="nav navbar-nav">
-				<!-- Messages: style can be found in dropdown.less-->
-				<li class="dropdown messages-menu"><a href="#"
-					class="dropdown-toggle" data-toggle="dropdown"> <i
-						class="fa fa-envelope-o"></i> <span class="label label-success">4</span>
-				</a>
-					<ul class="dropdown-menu">
-						<li class="header"></li>
-						<li>
-							<!-- inner menu: contains the actual data -->
-							<ul class="menu">
-								<li>
-									<!-- start message --> <a href="#"> </a>
-								</li>
-								<!-- end message -->
-								<li><a href="#"> </a></li>
-								<li><a href="#"> </a></li>
-								<li><a href="#"> </a></li>
-								<li><a href="#"> </a></li>
-							</ul>
-						</li>
-						<li class="footer"><a href="#"></a></li>
-					</ul></li>
-				<!-- Notifications: style can be found in dropdown.less -->
-				<li class="dropdown notifications-menu"><a href="#"
-					class="dropdown-toggle" data-toggle="dropdown"> <i
-						class="fa fa-bell-o"></i> <span class="label label-warning">10</span>
-				</a>
-					<ul class="dropdown-menu">
-						<li class="header"></li>
-						<li>
-							<!-- inner menu: contains the actual data -->
-							<ul class="menu">
-								<li><a href="#"> </a></li>
-								<li><a href="#"> </a></li>
-								<li><a href="#"> </a></li>
-								<li><a href="#"> </a></li>
-								<li><a href="#"> </a></li>
-							</ul>
-						</li>
-						<li class="footer"><a href="#"></a></li>
-					</ul></li>
-				<!-- Tasks: style can be found in dropdown.less -->
-				<li class="dropdown tasks-menu"><a href="#"
-					class="dropdown-toggle" data-toggle="dropdown"> <i
-						class="fa fa-flag-o"></i> <span class="label label-danger">9</span>
-				</a>
-					<ul class="dropdown-menu">
-						<li class="header"></li>
-						<li>
-							<!-- inner menu: contains the actual data -->
-							<ul class="menu">
-								<li>
-									<!-- Task item --> <a href="#"> </a>
-								</li>
-								<!-- end task item -->
-								<li>
-									<!-- Task item --> <a href="#"> </a>
-								</li>
-								<!-- end task item -->
-								<li>
-									<!-- Task item --> <a href="#"> </a>
-								</li>
-								<!-- end task item -->
-								<li>
-									<!-- Task item --> <a href="#"> </a>
-								</li>
-								<!-- end task item -->
-							</ul>
-						</li>
-						<li class="footer"><a href="#"></a></li>
-					</ul></li>
-				<!-- User Account: style can be found in dropdown.less -->
+<%--				<!-- Messages: style can be found in dropdown.less-->--%>
+<%--				<li class="dropdown messages-menu"><a href="#"--%>
+<%--					class="dropdown-toggle" data-toggle="dropdown"> <i--%>
+<%--						class="fa fa-envelope-o"></i> <span class="label label-success">4</span>--%>
+<%--				</a>--%>
+<%--					<ul class="dropdown-menu">--%>
+<%--						<li class="header"></li>--%>
+<%--						<li>--%>
+<%--							<!-- inner menu: contains the actual data -->--%>
+<%--							<ul class="menu">--%>
+<%--								<li>--%>
+<%--									<!-- start message --> <a href="#"> </a>--%>
+<%--								</li>--%>
+<%--								<!-- end message -->--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--							</ul>--%>
+<%--						</li>--%>
+<%--						<li class="footer"><a href="#"></a></li>--%>
+<%--					</ul></li>--%>
+<%--				<!-- Notifications: style can be found in dropdown.less -->--%>
+<%--				<li class="dropdown notifications-menu"><a href="#"--%>
+<%--					class="dropdown-toggle" data-toggle="dropdown"> <i--%>
+<%--						class="fa fa-bell-o"></i> <span class="label label-warning">10</span>--%>
+<%--				</a>--%>
+<%--					<ul class="dropdown-menu">--%>
+<%--						<li class="header"></li>--%>
+<%--						<li>--%>
+<%--							<!-- inner menu: contains the actual data -->--%>
+<%--							<ul class="menu">--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--								<li><a href="#"> </a></li>--%>
+<%--							</ul>--%>
+<%--						</li>--%>
+<%--						<li class="footer"><a href="#"></a></li>--%>
+<%--					</ul></li>--%>
+<%--				<!-- Tasks: style can be found in dropdown.less -->--%>
+<%--				<li class="dropdown tasks-menu"><a href="#"--%>
+<%--					class="dropdown-toggle" data-toggle="dropdown"> <i--%>
+<%--						class="fa fa-flag-o"></i> <span class="label label-danger">9</span>--%>
+<%--				</a>--%>
+<%--					<ul class="dropdown-menu">--%>
+<%--						<li class="header"></li>--%>
+<%--						<li>--%>
+<%--							<!-- inner menu: contains the actual data -->--%>
+<%--							<ul class="menu">--%>
+<%--								<li>--%>
+<%--									<!-- Task item --> <a href="#"> </a>--%>
+<%--								</li>--%>
+<%--								<!-- end task item -->--%>
+<%--								<li>--%>
+<%--									<!-- Task item --> <a href="#"> </a>--%>
+<%--								</li>--%>
+<%--								<!-- end task item -->--%>
+<%--								<li>--%>
+<%--									<!-- Task item --> <a href="#"> </a>--%>
+<%--								</li>--%>
+<%--								<!-- end task item -->--%>
+<%--								<li>--%>
+<%--									<!-- Task item --> <a href="#"> </a>--%>
+<%--								</li>--%>
+<%--								<!-- end task item -->--%>
+<%--							</ul>--%>
+<%--						</li>--%>
+<%--						<li class="footer"><a href="#"></a></li>--%>
+<%--					</ul></li>--%>
+<%--				<!-- User Account: style can be found in dropdown.less -->--%>
 				<li class="dropdown user user-menu"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown"> <img
 						src="img/user2-160x160.jpg" class="user-image" alt="User Image">
@@ -141,11 +141,7 @@
 						<!-- User image -->
 						<li class="user-header"><img src="img/user2-160x160.jpg"
 							class="img-circle" alt="User Image">
-
-							<p>
-								测试用户 <small>最后登录 11:20AM</small>
-							</p></li>
-
+							</li>
 						<!-- Menu Footer-->
 						<li class="user-footer">
 							<div class="pull-left">
@@ -182,7 +178,7 @@
 					class="fa fa-dashboard"></i> <span>首页</span></a></li>
 
 			<!-- 菜单 -->
-			<li class="treeview"><a href="#"> <i class="fa fa-folder"></i>
+			<li class="treeview"><a href="#"> <i class="fa fa-info"></i>
 					<span>社会风险指数模型管理</span> <span class="pull-right-container">
 						<i class="fa fa-angle-left pull-right"></i>
 				</span>
@@ -191,16 +187,9 @@
 
 					<li id="admin-login"><a
 						href="institutionInfo/doInstitutionInfoManagerUI.shtml"
-						target="iframe"> <i class="fa fa-circle-o"></i>城市风险信息管理
+						target="iframe"> <i class="fa fa-exclamation-triangle"></i>城市风险信息管理
 					</a></li>
-					<li id="admin-login"><a
-						href="institutionInfo/doInstitutionInfoManagerUI.shtml"
-						target="iframe"> <i class="fa fa-circle-o"></i>xxxx信息管理
-					</a></li>
-					<li id="admin-login"><a
-						href="institutionInfo/doInstitutionInfoManagerUI.shtml"
-						target="iframe"> <i class="fa fa-circle-o"></i>xxx信息管理
-					</a></li>
+
 					
 				</ul></li>
 				
