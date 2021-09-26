@@ -1,5 +1,7 @@
 package com.complexdata.controller;
 
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONObject;
 import cn.hutool.log.Log;
 import com.complexdata.model.City;
 import com.complexdata.service.CityService;
@@ -8,11 +10,12 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/institutionInfo")
@@ -48,4 +51,22 @@ public class CityController {
         return "forward:doInstitutionInfoManagerUI";
     }
 
+
+    @RequestMapping(value = "/receiveFile",method =RequestMethod.POST )
+    @ResponseBody
+    public String receiveExcelFile(@RequestParam("uploadFile") MultipartFile uploadFile){
+
+        if(!uploadFile.isEmpty())
+            System.out.println("get the data !");
+         JSONObject jsonObject = new  JSONObject();
+        return jsonObject.toString();
+    }
+    @RequestMapping(value = "/deleteRecords",method =RequestMethod.POST )
+    @ResponseBody
+    public String deleteRecords(List<String> check_values){
+
+        System.out.println(check_values.size());
+        JSONObject jsonObject = new  JSONObject();
+        return jsonObject.toString();
+    }
 }

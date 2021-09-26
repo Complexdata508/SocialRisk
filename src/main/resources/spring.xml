@@ -74,8 +74,14 @@
         <aop:pointcut expression="execution(* com.complexdata.service.impl.*.*(..))" id="tranpointcut" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="tranpointcut" />
     </aop:config>
-    
-    
+
+
+<!--    配置上传文件的大小限制 10M-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="10485760" />
+    </bean>
+
+
     <!-- 
     	集成MyBatis
     	1、mybatis配置文件在哪里
