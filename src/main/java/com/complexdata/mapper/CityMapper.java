@@ -1,7 +1,6 @@
 package com.complexdata.mapper;
 
 import com.complexdata.model.City;
-import com.complexdata.model.InstitutionInfo;
 import com.github.abel533.mapper.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,5 +1,6 @@
+<%@ page import="com.complexdata.model.City" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core"  prefix = "c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -16,8 +17,10 @@
     <link rel="stylesheet" href="/SocialRisk/css/style.css">
     
     <!-- 引入angularjs -->
-    <script src="/SocialRisk/plugins/angularjs/angular.min.js"></script>
-    <script src="/SocialRisk/plugins/angularjs/angular-route.min.js"></script>
+<%--    <script src="/SocialRisk/plugins/angularjs/angular.min.js"></script>--%>
+<%--    <script src="/SocialRisk/plugins/angularjs/angular-route.min.js"></script>--%>
+
+<%--	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>--%>
     
     <!-- 引入分页插件 -->
     <!-- 分页样式 -->
@@ -32,7 +35,7 @@
     <script src="/SocialRisk/plugins/bootstrap/js/bootstrap.min.js"></script>
     
 </head>
-
+<% City city = new City();%>
 <body class="hold-transition skin-red sidebar-mini"  ng-app="complexdata" ng-controller="institutionInfoController" >
   <!-- .box-body -->
                 
@@ -97,8 +100,8 @@
 									      <td></td>
 		                                  <td></td>
 		                                  <td class="text-center">
-		                                 	  <button type="button" class="btn bg-olive btn-xs" >修改</button>
-											  <button type="button" class="btn bg-primary btn-xs" >详情</button>
+		                                 	  <a type="button" class="btn bg-olive btn-xs " href="toCityInfo/${id.index}.shtml" >修改</a>
+											  <button type="button" class="btn bg-primary btn-xs" data-toggle="modal" data-target="#editModal" >详情</button>
 										  </td>
 			                          </tr>
 								  </c:forEach>
@@ -147,7 +150,7 @@
 				<tbody>
 		      	<tr>
 		      		<td>城市名称</td>
-		      		<td><input  class="form-control" placeholder="城市名称" ng-model="entity.logno">  </td>
+		      		<td><input  class="form-control" placeholder="城市名称" value="">  </td>
 		      	</tr>
 		      	<tr>
 		      		<td>失业率</td>
@@ -735,4 +738,12 @@
 </div> -->
 </body>
 
+<script>
+	function detailsClick(i){
+		console.log(i)
+		var city =  "${cityList.get(i)}";
+		"${city =  cityList.get(i)}"
+		console.log(city)
+	}
+</script>
 </html>

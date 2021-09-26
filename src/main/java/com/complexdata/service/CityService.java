@@ -1,7 +1,6 @@
 package com.complexdata.service;
 
 import com.complexdata.model.City;
-import com.complexdata.model.InstitutionInfo;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
