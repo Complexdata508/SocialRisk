@@ -96,7 +96,7 @@
 			                      <tbody>
 								  <c:forEach items="${cityList}" var="City" varStatus="id">
 			                          <tr >
-			                              <td><input class="institutionInfoCheckBox" type="checkbox" name="checkDelete" value="${cityList.get(id.index)}"></td>
+			                              <td><input class="institutionInfoCheckBox" type="checkbox" name="checkDelete" value="${cityList.get(id.index).id}"></td>
 				                          <td>${City.name}</td>
 									      <td>${City.name}</td>
 									      <td></td>
@@ -261,26 +261,42 @@
 		// 	}
 		// });
 	});
-	function getResult(data){
-		console.log(data)
+	function getResult(response, status){
+		if(status==="success"){
+			alert("删除成功");
+			location.reload()
+		}else{
+			alert("删除失败，请稍后重试");
+		}
+		$('input[name="checkDelete"]:checked').each(function (){
+			$(this).prop("checked",false);
+		})
 	}
 	function  deleteCheckedRecord(){
 		var check_values = [];
+		var checkValuesList = {};
+		var passData = ""
 		$('input[name="checkDelete"]:checked').each(function (){
 			check_values.push($(this).val())
+			passData+=$(this).val();
+			passData+=";"
 		})
 		if(check_values.length==0){
 			alert("请选中需要删除相关记录")
 			return;
 		}
-		console.log(check_values.length);
-		$.post(
-				url="deleteRecords.shtml",
-				data={"check_values":check_values},
-				traditional=true,
-				dataType = "json",
-				complete=getResult(data),
 
+
+		$.post({
+					url:"deleteRecords.shtml",
+					contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+					data:{
+						// check_values:JSON.stringify(check_values)
+						check_values:passData
+					},
+					dataType : "json",
+					success:getResult,
+			}
 		);
 	};
 </script>

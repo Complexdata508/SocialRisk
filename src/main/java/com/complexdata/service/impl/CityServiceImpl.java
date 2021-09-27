@@ -3,6 +3,7 @@ package com.complexdata.service.impl;
 import com.complexdata.mapper.CityMapper;
 import com.complexdata.model.City;
 import com.complexdata.service.CityService;
+import com.complexdata.utils.Result;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,15 @@ public class CityServiceImpl implements CityService {
     public City findOneCityinfo(String name) {
         City city = cityMapper.findByName(name);
         return city;
+    }
+
+    @Override
+    public Result deleteCitiesById(List<String> cityIdList) {
+        for(String i:cityIdList)
+            cityMapper.deleteByPrimaryKey(i);
+        Result result = new Result();
+        result.setMessage("ok");
+        result.setSuccess(true);
+        return result;
     }
 }

@@ -2,10 +2,12 @@ package com.complexdata.controller;
 
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import cn.hutool.log.Log;
 import com.complexdata.model.City;
 import com.complexdata.service.CityService;
 
+import com.complexdata.utils.Result;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,13 +27,14 @@ public class CityController {
 //查询所有城市信息
     @RequestMapping("/doInstitutionInfoManagerUI")
     public String doInstitutionInfoManagerUI(Model model){
-//        PageInfo<City> cityinfo = cityService.getAllCityinfo(1, 10);
-        ArrayList<City> cityList = new ArrayList<>();
+        PageInfo<City> cityinfo = cityService.getAllCityinfo(1, 10);
+        List<City> cityList = new ArrayList<>();
         for (int i=0;i<10;i++){
             City city = new City();
             city.setName(Integer.toString(i));
             cityList.add(city);
         }
+        cityList = cityinfo.getList();
         model.addAttribute("cityList",cityList);
         return "admin/institution_info_manager";
     }
@@ -63,10 +66,20 @@ public class CityController {
     }
     @RequestMapping(value = "/deleteRecords",method =RequestMethod.POST )
     @ResponseBody
-    public String deleteRecords(List<String> check_values){
+    public String deleteRecords( @RequestParam("check_values")  String check_values){
 
-        System.out.println(check_values.size());
-        JSONObject jsonObject = new  JSONObject();
-        return jsonObject.toString();
+//        List<String> cityIdList = new ArrayList<>();
+//        for(String element:check_values)
+//            cityIdList.add(element);
+        System.out.println(check_values);
+        String[] split = check_values.split(";");
+        List<String> cityIdList = new ArrayList<>();
+        for(String element :split){
+            if(!element.isEmpty())
+                cityIdList.add(element);
+        }
+        Result getResult = cityService.deleteCitiesById(cityIdList);
+        JSONObject result = JSONUtil.parseObj(getResult);
+        return result.toString();
     }
 }
