@@ -1,5 +1,6 @@
 package com.complexdata.service.impl;
 
+import cn.hutool.core.util.IdUtil;
 import com.complexdata.mapper.CityMapper;
 import com.complexdata.model.City;
 import com.complexdata.service.CityService;
@@ -41,5 +42,14 @@ public class CityServiceImpl implements CityService {
         result.setMessage("ok");
         result.setSuccess(true);
         return result;
+    }
+
+    @Override
+    public void InsertCityData(List<City> cityList) {
+        for(City city:cityList){
+            String CityId = IdUtil.randomUUID();
+            city.setId(CityId);
+            cityMapper.insert(city);
+        }
     }
 }

@@ -16,5 +16,6 @@ public interface CityService {
     public City findOneCityinfo(String name);
 
     Result deleteCitiesById(List<String> cityIdList);
+    void InsertCityData(List<City> cityList);
 
 }

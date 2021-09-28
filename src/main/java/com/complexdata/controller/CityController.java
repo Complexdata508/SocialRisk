@@ -4,10 +4,12 @@ import cn.hutool.json.JSON;
 import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import cn.hutool.log.Log;
+import com.alibaba.excel.EasyExcel;
 import com.complexdata.model.City;
 import com.complexdata.service.CityService;
 
 import com.complexdata.utils.Result;
+import com.complexdata.utils.UploadDataListener;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,11 +60,12 @@ public class CityController {
 
     @RequestMapping(value = "/receiveFile",method =RequestMethod.POST )
     @ResponseBody
-    public String receiveExcelFile(@RequestParam("uploadFile") MultipartFile uploadFile){
+    public String receiveExcelFile(@RequestParam("uploadFile") MultipartFile uploadFile) throws IOException {
 
         if(!uploadFile.isEmpty())
             System.out.println("get the data !");
-         JSONObject jsonObject = new  JSONObject();
+        EasyExcel.read(uploadFile.getInputStream(),City.class,new UploadDataListener(this.cityService)).sheet().doRead();
+        JSONObject jsonObject = new  JSONObject();
         return jsonObject.toString();
     }
     @RequestMapping(value = "/deleteRecords",method =RequestMethod.POST )

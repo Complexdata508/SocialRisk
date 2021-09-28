@@ -3,45 +3,11 @@ package com.complexdata.model;
 import javax.persistence.Id;
 
 public class City {
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getUnemploymentRate() {
-        return unemploymentRate;
-    }
-
-    public void setUnemploymentRate(Integer unemploymentRate) {
-        this.unemploymentRate = unemploymentRate;
-    }
-
     @Id
     private String id;
-
-
     private String name;
     private Integer unemploymentRate;
     private Integer endowmentInsuranceCoverage;
-
-    public Integer getEndowmentInsuranceCoverage() {
-        return endowmentInsuranceCoverage;
-    }
-
-    public void setEndowmentInsuranceCoverage(Integer endowmentInsuranceCoverage) {
-        this.endowmentInsuranceCoverage = endowmentInsuranceCoverage;
-    }
     private Integer maternityInsuranceCoverage;
     private Integer industrialInjuryInsuranceCoverage;
     private Integer medicalInsuranceCoverage;
@@ -54,56 +20,12 @@ public class City {
     private Integer harmlessTreatmentRateOfDomesticWaste ;
     private Integer lifeExpectancyAtBirth ;
     private Integer perCapitaGdpGrowthRate ;
-
-    public Integer getPerCapitaGdpGrowthRate() {
-        return perCapitaGdpGrowthRate;
-    }
-
-    public void setPerCapitaGdpGrowthRate(Integer perCapitaGdpGrowthRate) {
-        this.perCapitaGdpGrowthRate = perCapitaGdpGrowthRate;
-    }
-
     private Integer growthRateOfResidentsIncome ;
     private Integer proportionOfNonAgriculturalEmployment;
-
-    public Integer getComprehensiveEnergyConsumptionPer() {
-        return comprehensiveEnergyConsumptionPer;
-    }
-
-    public void setComprehensiveEnergyConsumptionPer(Integer comprehensiveEnergyConsumptionPer) {
-        this.comprehensiveEnergyConsumptionPer = comprehensiveEnergyConsumptionPer;
-    }
-
     private Integer comprehensiveEnergyConsumptionPer;
     private Integer perCapitaGreenArea ;
     private Integer proportionOfEducationExpenditureInGdp ;
-
-    public Integer getProportionOfEducationExpenditureInGdp() {
-        return proportionOfEducationExpenditureInGdp;
-    }
-
-    public void setProportionOfEducationExpenditureInGdp(Integer proportionOfEducationExpenditureInGdp) {
-        this.proportionOfEducationExpenditureInGdp = proportionOfEducationExpenditureInGdp;
-    }
-
     private Integer cpiIndex ;
-
-    public Integer getProportionOfSocialSecurityExpenditureInGdp() {
-        return proportionOfSocialSecurityExpenditureInGdp;
-    }
-
-    public void setProportionOfSocialSecurityExpenditureInGdp(Integer proportionOfSocialSecurityExpenditureInGdp) {
-        this.proportionOfSocialSecurityExpenditureInGdp = proportionOfSocialSecurityExpenditureInGdp;
-    }
-
-    public Integer getCpiIndex() {
-        return cpiIndex;
-    }
-
-    public void setCpiIndex(Integer cpiIndex) {
-        this.cpiIndex = cpiIndex;
-    }
-
     private Integer ratioOfRegionalPer ;
     private Integer ratioOfDisposableIncome ;
     private Integer incidenceOfRuralPoverty ;
@@ -117,15 +39,6 @@ public class City {
     private Integer numberOfLawyersPer ;
     private Integer numberOfPublicSecurity ;
     private Integer numberOfWanVolunteers ;
-
-    public Integer getNumberOfWanVolunteers() {
-        return numberOfWanVolunteers;
-    }
-
-    public void setNumberOfWanVolunteers(Integer numberOfWanVolunteers) {
-        this.numberOfWanVolunteers = numberOfWanVolunteers;
-    }
-
     private Integer numberOfPublicSecurityOfficersFighting;
     private Integer numberOfVolunteerGroup;
     private Integer increaseRateOf;
@@ -138,15 +51,6 @@ public class City {
     private Integer numberOfPeoplesMediationCasesAccepted ;
     private Integer  successRateOfPeoplesMediation ;
     private Integer  numberOfCommunityCorrectionPersonnel;
-
-    public Integer getNumberOfCommunityCorrectionPersonnel() {
-        return numberOfCommunityCorrectionPersonnel;
-    }
-
-    public void setNumberOfCommunityCorrectionPersonnel(Integer numberOfCommunityCorrectionPersonnel) {
-        this.numberOfCommunityCorrectionPersonnel = numberOfCommunityCorrectionPersonnel;
-    }
-
     private Integer numberOfRecidivistsInCommunityCorrections ;
     private Integer serviceAcceptanceRateOfSpecialPopulation ;
     private Integer numberOfGroupEvents ;
@@ -159,58 +63,10 @@ public class City {
     private Integer accidentDisasterLevel ;
     private Integer publicHealthEventLevel ;
     private Integer socialSecurityEventLevel ;
-
-
-
-//    private Integer numberOfMajorEconomicCases ;
-//    private Integer numberOfMajorCriminalCases ;
-//
-//    public Integer getNumberOfMajorEconomicCases() {
-//        return numberOfMajorEconomicCases;
-//    }
-//
-//    public void setNumberOfMajorEconomicCases(Integer numberOfMajorEconomicCases) {
-//        this.numberOfMajorEconomicCases = numberOfMajorEconomicCases;
-//    }
-//
-//    public Integer getNumberOfMajorCriminalCases() {
-//        return numberOfMajorCriminalCases;
-//    }
-
-//    public void setNumberOfMajorCriminalCases(Integer numberOfMajorCriminalCases) {
-//        this.numberOfMajorCriminalCases = numberOfMajorCriminalCases;
-//    }
-
     private Integer growthRateOfLaborDisputes ;
     private Integer numberOfCrackdownsOnPornographyGamblingAndDrugs ;
     private Integer numberOfMultipleSexualAssaultCases ;
     private Integer numberOfPublicSecurityPolice ;
-    //暂停
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private Integer numberOfFires ;
     private Integer numberOfFatalAccidentsInProductionSafety ;
     private Integer numberOfPersonsInCriminalDetention ;
@@ -246,6 +102,92 @@ public class City {
     private Integer numberOfPotentialElectricalSafetyHazardsInPublicAreas ;
   //  private Integer numberOfGridManagementViolations2 ;
     private Integer numberOfOtherPotentialSafetyHazardsInPublicAreas ;
+
+
+
+
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getUnemploymentRate() {
+        return unemploymentRate;
+    }
+
+    public void setUnemploymentRate(Integer unemploymentRate) {
+        this.unemploymentRate = unemploymentRate;
+    }
+
+    public Integer getPerCapitaGdpGrowthRate() {
+        return perCapitaGdpGrowthRate;
+    }
+
+    public void setPerCapitaGdpGrowthRate(Integer perCapitaGdpGrowthRate) {
+        this.perCapitaGdpGrowthRate = perCapitaGdpGrowthRate;
+    }
+    public Integer getNumberOfWanVolunteers() {
+        return numberOfWanVolunteers;
+    }
+    public Integer getProportionOfSocialSecurityExpenditureInGdp() {
+        return proportionOfSocialSecurityExpenditureInGdp;
+    }
+    public Integer getComprehensiveEnergyConsumptionPer() {
+        return comprehensiveEnergyConsumptionPer;
+    }
+
+    public void setComprehensiveEnergyConsumptionPer(Integer comprehensiveEnergyConsumptionPer) {
+        this.comprehensiveEnergyConsumptionPer = comprehensiveEnergyConsumptionPer;
+    }
+    public Integer getEndowmentInsuranceCoverage() {
+        return endowmentInsuranceCoverage;
+    }
+    public Integer getProportionOfEducationExpenditureInGdp() {
+        return proportionOfEducationExpenditureInGdp;
+    }
+
+    public void setProportionOfEducationExpenditureInGdp(Integer proportionOfEducationExpenditureInGdp) {
+        this.proportionOfEducationExpenditureInGdp = proportionOfEducationExpenditureInGdp;
+    }
+
+    public void setEndowmentInsuranceCoverage(Integer endowmentInsuranceCoverage) {
+        this.endowmentInsuranceCoverage = endowmentInsuranceCoverage;
+    }
+    public void setProportionOfSocialSecurityExpenditureInGdp(Integer proportionOfSocialSecurityExpenditureInGdp) {
+        this.proportionOfSocialSecurityExpenditureInGdp = proportionOfSocialSecurityExpenditureInGdp;
+    }
+
+    public Integer getCpiIndex() {
+        return cpiIndex;
+    }
+
+    public void setCpiIndex(Integer cpiIndex) {
+        this.cpiIndex = cpiIndex;
+    }
+
+
+    public void setNumberOfCommunityCorrectionPersonnel(Integer numberOfCommunityCorrectionPersonnel) {
+        this.numberOfCommunityCorrectionPersonnel = numberOfCommunityCorrectionPersonnel;
+    }
+    public void setNumberOfWanVolunteers(Integer numberOfWanVolunteers) {
+        this.numberOfWanVolunteers = numberOfWanVolunteers;
+    }
+    public Integer getNumberOfCommunityCorrectionPersonnel() {
+        return numberOfCommunityCorrectionPersonnel;
+    }
 
     public Integer getMaternityInsuranceCoverage() {
         return maternityInsuranceCoverage;
@@ -951,5 +893,105 @@ public class City {
 
     public void setNumberOfOtherPotentialSafetyHazardsInPublicAreas(Integer numberOfOtherPotentialSafetyHazardsInPublicAreas) {
         this.numberOfOtherPotentialSafetyHazardsInPublicAreas = numberOfOtherPotentialSafetyHazardsInPublicAreas;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", unemploymentRate=" + unemploymentRate +
+                ", endowmentInsuranceCoverage=" + endowmentInsuranceCoverage +
+                ", maternityInsuranceCoverage=" + maternityInsuranceCoverage +
+                ", industrialInjuryInsuranceCoverage=" + industrialInjuryInsuranceCoverage +
+                ", medicalInsuranceCoverage=" + medicalInsuranceCoverage +
+                ", unemploymentInsuranceCoverage=" + unemploymentInsuranceCoverage +
+                ", proportionOfSocialSecurityExpenditureInGdp=" + proportionOfSocialSecurityExpenditureInGdp +
+                ", engelCoefficient=" + engelCoefficient +
+                ", perCapitaHousingArea=" + perCapitaHousingArea +
+                ", lowRentHousingCoverage=" + lowRentHousingCoverage +
+                ", averageYearsOfEducation=" + averageYearsOfEducation +
+                ", harmlessTreatmentRateOfDomesticWaste=" + harmlessTreatmentRateOfDomesticWaste +
+                ", lifeExpectancyAtBirth=" + lifeExpectancyAtBirth +
+                ", perCapitaGdpGrowthRate=" + perCapitaGdpGrowthRate +
+                ", growthRateOfResidentsIncome=" + growthRateOfResidentsIncome +
+                ", proportionOfNonAgriculturalEmployment=" + proportionOfNonAgriculturalEmployment +
+                ", comprehensiveEnergyConsumptionPer=" + comprehensiveEnergyConsumptionPer +
+                ", perCapitaGreenArea=" + perCapitaGreenArea +
+                ", proportionOfEducationExpenditureInGdp=" + proportionOfEducationExpenditureInGdp +
+                ", cpiIndex=" + cpiIndex +
+                ", ratioOfRegionalPer=" + ratioOfRegionalPer +
+                ", ratioOfDisposableIncome=" + ratioOfDisposableIncome +
+                ", incidenceOfRuralPoverty=" + incidenceOfRuralPoverty +
+                ", incomeRatioOf=" + incomeRatioOf +
+                ", giniCoefficientOfNationalResidents=" + giniCoefficientOfNationalResidents +
+                ", recognitionOfSocialCoreValues=" + recognitionOfSocialCoreValues +
+                ", evaluationValueOfSocialPublicMorality=" + evaluationValueOfSocialPublicMorality +
+                ", numberOfPoliceForce=" + numberOfPoliceForce +
+                ", numberOfLawyersPer=" + numberOfLawyersPer +
+                ", numberOfPublicSecurity=" + numberOfPublicSecurity +
+                ", numberOfWanVolunteers=" + numberOfWanVolunteers +
+                ", numberOfPublicSecurityOfficersFighting=" + numberOfPublicSecurityOfficersFighting +
+                ", numberOfVolunteerGroup=" + numberOfVolunteerGroup +
+                ", increaseRateOf=" + increaseRateOf +
+                ", numberOfPetitionsBeyondTheLevel=" + numberOfPetitionsBeyondTheLevel +
+                ", complaintsAgainst=" + complaintsAgainst +
+                ", communityComplaintsAndDisputes=" + communityComplaintsAndDisputes +
+                ", informationCollectionRateOfFloatingPopulation=" + informationCollectionRateOfFloatingPopulation +
+                ", nonCancellationRateOfFloatingPopulationInformation=" + nonCancellationRateOfFloatingPopulationInformation +
+                ", preCaseResidenceRegistrationRateOfTwoDetainees=" + preCaseResidenceRegistrationRateOfTwoDetainees +
+                ", numberOfPeoplesMediationCasesAccepted=" + numberOfPeoplesMediationCasesAccepted +
+                ", successRateOfPeoplesMediation=" + successRateOfPeoplesMediation +
+                ", numberOfCommunityCorrectionPersonnel=" + numberOfCommunityCorrectionPersonnel +
+                ", numberOfRecidivistsInCommunityCorrections=" + numberOfRecidivistsInCommunityCorrections +
+                ", serviceAcceptanceRateOfSpecialPopulation=" + serviceAcceptanceRateOfSpecialPopulation +
+                ", numberOfGroupEvents=" + numberOfGroupEvents +
+                ", visualAttendanceRateOfGroupPreventionAndTreatment=" + visualAttendanceRateOfGroupPreventionAndTreatment +
+                ", electionTurnout=" + electionTurnout +
+                ", complianceRateOfGrassRootsAutonomyAccordingToLaw=" + complianceRateOfGrassRootsAutonomyAccordingToLaw +
+                ", socialMobilityRate=" + socialMobilityRate +
+                ", developmentOfCivilSocietyOrganizations=" + developmentOfCivilSocietyOrganizations +
+                ", naturalDisasterLevel=" + naturalDisasterLevel +
+                ", accidentDisasterLevel=" + accidentDisasterLevel +
+                ", publicHealthEventLevel=" + publicHealthEventLevel +
+                ", socialSecurityEventLevel=" + socialSecurityEventLevel +
+                ", growthRateOfLaborDisputes=" + growthRateOfLaborDisputes +
+                ", numberOfCrackdownsOnPornographyGamblingAndDrugs=" + numberOfCrackdownsOnPornographyGamblingAndDrugs +
+                ", numberOfMultipleSexualAssaultCases=" + numberOfMultipleSexualAssaultCases +
+                ", numberOfPublicSecurityPolice=" + numberOfPublicSecurityPolice +
+                ", numberOfFires=" + numberOfFires +
+                ", numberOfFatalAccidentsInProductionSafety=" + numberOfFatalAccidentsInProductionSafety +
+                ", numberOfPersonsInCriminalDetention=" + numberOfPersonsInCriminalDetention +
+                ", impactOfForeignEconomicFrictionAndSanctions=" + impactOfForeignEconomicFrictionAndSanctions +
+                ", impactOfInternationalFinancialCrisis=" + impactOfInternationalFinancialCrisis +
+                ", impactOfForeignArmedInterventionAndTerroristAttacks=" + impactOfForeignArmedInterventionAndTerroristAttacks +
+                ", impactOfWorldEconomicRecession=" + impactOfWorldEconomicRecession +
+                ", jobSatisfaction=" + jobSatisfaction +
+                ", naturalEnvironmentSatisfaction=" + naturalEnvironmentSatisfaction +
+                ", satisfactionRateOfCadreMassesRelationship=" + satisfactionRateOfCadreMassesRelationship +
+                ", satisfactionWithRightsAndInterestsProtection=" + satisfactionWithRightsAndInterestsProtection +
+                ", satisfactionWithPoliticalCivilization=" + satisfactionWithPoliticalCivilization +
+                ", peoplesSenseOfSecurity=" + peoplesSenseOfSecurity +
+                ", residentsLifeSatisfaction=" + residentsLifeSatisfaction +
+                ", tolerabilityOfJudicialInjustice=" + tolerabilityOfJudicialInjustice +
+                ", tolerabilityOfIncomeGap=" + tolerabilityOfIncomeGap +
+                ", tolerabilityOfPriceRise=" + tolerabilityOfPriceRise +
+                ", tolerabilityOfCorruption=" + tolerabilityOfCorruption +
+                ", numberOfFireSafetyHazards=" + numberOfFireSafetyHazards +
+                ", numberOfElectricalSafetyHazards=" + numberOfElectricalSafetyHazards +
+                ", numberOfProductionSafetyHazards=" + numberOfProductionSafetyHazards +
+                ", numberOfPotentialConstructionSafetyHazards=" + numberOfPotentialConstructionSafetyHazards +
+                ", numberOfPotentialPublicSafetyHazards=" + numberOfPotentialPublicSafetyHazards +
+                ", numberOfGridManagementViolations=" + numberOfGridManagementViolations +
+                ", numberOfOtherPotentialSafetyHazards=" + numberOfOtherPotentialSafetyHazards +
+                ", numberOfResidentialFireSafetyHazards=" + numberOfResidentialFireSafetyHazards +
+                ", numberOfPotentialSafetyHazardsOfResidentialBuildings=" + numberOfPotentialSafetyHazardsOfResidentialBuildings +
+                ", numberOfPotentialResidentialPublicSafetyHazards=" + numberOfPotentialResidentialPublicSafetyHazards +
+                ", numberOfOtherPotentialResidentialSafetyHazards=" + numberOfOtherPotentialResidentialSafetyHazards +
+                ", numberOfFireSafetyHazardsInPublicAreas=" + numberOfFireSafetyHazardsInPublicAreas +
+                ", numberOfPotentialSafetyHazardsOfBuildingsInPublicAreas=" + numberOfPotentialSafetyHazardsOfBuildingsInPublicAreas +
+                ", numberOfPotentialElectricalSafetyHazardsInPublicAreas=" + numberOfPotentialElectricalSafetyHazardsInPublicAreas +
+                ", numberOfOtherPotentialSafetyHazardsInPublicAreas=" + numberOfOtherPotentialSafetyHazardsInPublicAreas +
+                '}';
     }
 }
