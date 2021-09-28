@@ -37,6 +37,7 @@
 								<input id="prependedInput" type="password" placeholder="请输入密码" class="span2 input-xfat"  required="required" name="password">
 							</div>
 							<div class="logined">
+
 								<button class="sui-btn btn-block btn-xlarge btn-primary" type="submit" target="_blank">登&nbsp;&nbsp;录</button>
 								<a class="sui-btn btn-block btn-xlarge btn-success" href="toRegister.shtml" target="_blank">注&nbsp;&nbsp;册</a>
 							</div>
@@ -71,4 +72,17 @@
 		background-image:url(./img/bussiness-man.png);background-position:-10px -201px
 	}
 </style>
+<script type="text/javascript">
+	window.onload=function(){
+		console.log("1233123")
+		var status = "${sessionScope.status}";
+		<%--status ="${status}"--%>
+		console.log(status)
+		if (status) {
+			alert("用户名或密码错误，请重试！");
+			<%--alert("${sessionScope.message}")--%>
+			 "${sessionScope.clear()}";
+		}
+	}
+</script>
 </html>
