@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh_CN">
+<meta charset="utf-8">
+<title> Angular动态添加输入框</title>
+ <link rel="stylesheet" href="/itfin_manager_ui/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/itfin_manager_ui/plugins/adminLTE/css/AdminLTE.css">
+    <link rel="stylesheet" href="/itfin_manager_ui/plugins/adminLTE/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="/itfin_manager_ui/css/style.css">
+    
+    <!-- 引入angularjs -->
+    <script src="/itfin_manager_ui/plugins/angularjs/angular.min.js"></script>
+    <script src="/itfin_manager_ui/plugins/angularjs/angular-route.min.js"></script>
+    
+    <!-- 引入分页插件 -->
+    <!-- 分页样式 -->
+    <link rel="stylesheet" href="/itfin_manager_ui/plugins/angularjs/pagination.css">
+    <script src="/itfin_manager_ui/plugins/angularjs/pagination.js"></script>
+    
+    <script src="/itfin_manager_ui/js/base_pagination.js"></script>
+    <script src="/itfin_manager_ui/js/controller/testController.js"></script>
+   
+    
+	<script src="/itfin_manager_ui/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="/itfin_manager_ui/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	alert("6666");
+    })
+
+	angular.module("myApp2",[]).controller("inputController",function($scope){
+   		$scope.items=[];  //初始化数组，以便为每一个ng-model分配一个对象
+   		var i=0;
+   		$scope.getResult=function(){   //计算输入框的总值
+     		var result=0;
+     		angular.forEach($scope.items,function(item,key){
+      		 result+=parseInt($scope.items[key]);
+     		});
+    	 $scope.result=result;
+  	 	}
+
+   $scope.Fn= {
+     add: function () {     //每次添加都要给items数组的长度加一
+       $scope.items[i] = 0;
+       i++;
+     },
+     del: function (key) {   //每次删除一个输入框都后要让i自减，否则重新添加时会出bug
+       console.log(key);
+       $scope.items.splice(key, 1);
+       i--;
+       $scope.getResult();  //每次删除时得重新计算总值
+     }
+   }
+
+ });
+</script>
+</head>
+<body ng-app="myApp2" ng-controller="inputController">
+  <div ng-repeat="(key,item) in items track by $index">  <!-- 借助track by $index进行循环-->
+     <input ng-model="items[key]"/><button ng-click="Fn.del(key)">删除</button>
+  </div>
+ 
+	{{result}}
+	<button ng-click="Fn.add()">Add</button>
+	  <button ng-click="getResult()">Result</button>
+</body>
+
+
+</html>

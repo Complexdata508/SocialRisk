@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.complexdata.mapper.InstitutionInfoMapper">
+	
+	<select id="findByInsitution" resultMap="InstitutionInfoMap">
+		SELECT * FROM INSTITUTION_INFO where INSTITUTION_NO = #{institutionNo}
+	</select>
+
+	<!-- search begin -->
+	<select id="searchByInstitutionNo" resultMap="InstitutionInfoMap">
+		SELECT * FROM INSTITUTION_INFO
+		
+		<if test="institutionNo!=null and institutionNo!=''">
+			WHERE INSTITUTION_NO like concat('%',#{institutionNo},'%')
+		</if>
+		ORDER BY LOGNO ASC
+	</select>
+	<!-- sezrch end -->
+
+	<!-- insert begin -->
+	<insert id="addInstitutionInfo" parameterType="InstitutionInfo">
+		INSERT INTO
+		INSTITUTION_INFO(
+		LOGNO,INSTITUTION_NO,INSTITUTION_NAME,INSTITUTION_TYPE ,
+		INSTITUTION_STATE,INST_ID,INST_ACCT,INST_ACCTNAME,CHANNEL_FLAG,PARAM_SET_ID,ROUTE_PARAM,
+		PARAM_NAME,FTP_ADDRESS,FTP_PORT,FTP_PATH,FTP_USER,FTP_PASSWORD,
+		ENCODING,TRANS_PROTOCOL,CALLBACK_ADDRESS,DESIGNATE_LEVEL,DISTRIB_PATTERN,RESERVE1,RESERVE2
+		)
+		VALUES(
+		#{logno},#{institutionNo},#{institutionName},#{institutionType},
+		#{institutionState},#{instId},#{instAcct},#{instAcctname},#{channelFlag},#{paramSetId},#{routeParam},
+		#{paramName},#{ftpAddress},#{ftpPort},#{ftpPath},#{ftpUser},#{ftpPassword},
+		#{encoding},#{transProtocol},#{callbackAddress},#{designateLevel},#{distribPattern},#{reserve1},#{reserve2}
+		)
+	</insert>
+	<!-- insert end -->
+	
+
+	<!-- DELETE BEGIN -->
+	<!-- 根据机构号和流水号删除资金端产品信息 -->
+	<delete id="deleteByInstitutionNos" parameterType="InstitutionInfo">
+		DELETE FROM
+		INSTITUTION_INFO
+		<where>
+			<if test="institutionNo!=null">
+				and institution_no = #{institutionNo}
+			</if>
+			<if test="logno!=null">
+				and logno = #{logno}
+			</if>
+
+		</where>
+	</delete>
+
+	<resultMap id="InstitutionInfoMap" type="InstitutionInfo">
+		<result property="logno" column="LOGNO" />
+		<result property="institutionNo" column="INSTITUTION_NO" />
+		<result property="institutionName" column="INSTITUTION_NAME" />
+		<result property="institutionType" column="INSTITUTION_TYPE" />
+		<result property="institutionState" column="INSTITUTION_STATE" />
+		<result property="channelFlag" column="CHANNEL_FLAG" />
+		<result property="paramSetId" column="PARAM_SET_ID" />
+		<result property="routeParam" column="ROUTE_PARAM" />
+		<result property="paramName" column="PARAM_NAME" />
+		<result property="ftpAddress" column="FTP_ADDRESS" />
+		<result property="ftpPort" column="FTP_PORT" />
+		<result property="ftpPath" column="FTP_PATH" />
+		<result property="ftpUser" column="FTP_USER" />
+		<result property="ftpPassword" column="FTP_PASSWORD" />
+		<result property="encoding" column="ENCODING" />
+		<result property="transProtocol" column="TRANS_PROTOCOL" />
+		<result property="callbackAddress" column="CALLBACK_ADDRESS" />
+		<result property="reserve1" column="RESERVE1" />
+		<result property="reserve2" column="RESERVE2" />
+	</resultMap>
+
+</mapper>
