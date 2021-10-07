@@ -97,7 +97,6 @@
                         <td>出生时预期寿命</td>
                         <td><input  class="form-control" placeholder="出生时预期寿命" value="${city.lifeExpectancyAtBirth}" name="lifeExpectancyAtBirth">  </td>
                     </tr>
-<%--                    --%>
                     <tr>
                         <td>人均国内生产总值增长率</td>
                         <td><input  class="form-control" placeholder="人均国内生产总值增长率" value="${city.perCapitaGdpGrowthRate}" name="perCapitaGdpGrowthRate">  </td>
@@ -129,12 +128,6 @@
                     <tr>
                         <td>地区人均收入与全国人均收入差距比例</td>
                         <td><input  class="form-control" placeholder="地区人均收入与全国人均收入差距比例" value="${city.ratioOfRegionalPer}" name="ratioOfRegionalPer">  </td>
-
-
-
-
-
-
                     </tr>
                     <tr>
                         <td>城镇居民可支配收入和农村居民纯收入差距比值</td>
@@ -441,7 +434,7 @@
 
             </div>
             <div class="modal-footer">
-                <input type="submit" class="btn btn-success" data-dismiss="modal" aria-hidden="true"></input>
+<%--                <input type="submit" class="btn btn-success" data-dismiss="modal" aria-hidden="true"></input>--%>
                 <a class="btn btn-default" data-dismiss="modal" aria-hidden="true" href="javascript:history.go(-1);">返回</a>
             </div>
         </div>

@@ -52,4 +52,49 @@ public class CityServiceImpl implements CityService {
             cityMapper.insert(city);
         }
     }
+
+
+
+
+
+    @Override
+    public City findOneCityinfoById(String id) {
+        City city = cityMapper.selectByPrimaryKey(id);
+//        Integer unemploymentRate = city.getUnemploymentRate();//计算风险等级
+//        City cityNew = new City();
+//        cityNew.setId(city.getId());
+////        cityNew.setRiskscore(unemploymentRate);
+//        int i = cityMapper.updateByPrimaryKeySelective(cityNew);
+//        City city1 = cityMapper.selectByPrimaryKey(id);
+        return city;
+    }
+
+    @Override
+    public int updateOneCityinfo(City city) {
+        int i = cityMapper.updateByPrimaryKeySelective(city);
+        return i;
+    }
+
+    @Override
+    public List<City> seleteCityByName(String name) {
+        City city = new City();
+        city.setName(name);
+        List<City> cities;
+        if(name==null||name.isEmpty()){
+            System.out.println("cityName is null ");
+            cities = cityMapper.select(new City());
+        }
+
+        else
+            cities= cityMapper.select(city);
+        return cities;
+    }
+
+    @Override
+    public int getCityCount() {
+        City city = new City();
+        int count = cityMapper.selectCount(city);
+        return count;
+    }
+
 }

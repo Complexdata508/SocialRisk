@@ -186,41 +186,41 @@
 				<ul class="treeview-menu">
 
 					<li id="admin-login"><a
-						href="institutionInfo/doInstitutionInfoManagerUI.shtml"
+						href="institutionInfo/doInstitutionInfoManagerUI/1.shtml"
 						target="iframe"> <i class="fa fa-exclamation-triangle"></i>城市风险信息管理
 					</a></li>
 
 					
 				</ul></li>
 				
-			<li class="treeview">
-				<a href="#"> 
-					<i class="fa fa-share"></i>
-					<span>1.基础表维护</span> 
-					<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>
-				</a>
-				<ul class="treeview-menu" style="display: none;">
-					<li class="">
-						<a href="#">
-							<i class="fa fa-circle-o"></i>城市风险信息管理
-							<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>
-						</a>
-						<ul class="treeview-menu" style="display: none;">
-							<li>
-								<a href="institutionInfo/doInstitutionInfoAddUI.shtml" target="iframe">
-									<i class="fa fa-circle-o"></i>城市风险信息增加
-								</a>
-							</li>
-							<li>
-								<a href="institutionInfo/doInstitutionInfoManagerUI1.shtml" target="iframe">
-									<i class="fa fa-circle-o"></i>城市风险信息查询
-								</a>
-							</li>
-						</ul>
-					</li>	
-					
-				</ul>
-			</li>
+<%--			<li class="treeview">--%>
+<%--				<a href="#"> --%>
+<%--					<i class="fa fa-share"></i>--%>
+<%--					<span>1.基础表维护</span> --%>
+<%--					<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>--%>
+<%--				</a>--%>
+<%--				<ul class="treeview-menu" style="display: none;">--%>
+<%--					<li class="">--%>
+<%--						<a href="#">--%>
+<%--							<i class="fa fa-circle-o"></i>城市风险信息管理--%>
+<%--							<span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i></span>--%>
+<%--						</a>--%>
+<%--						<ul class="treeview-menu" style="display: none;">--%>
+<%--							<li>--%>
+<%--								<a href="institutionInfo/doInstitutionInfoAddUI.shtml" target="iframe">--%>
+<%--									<i class="fa fa-circle-o"></i>城市风险信息增加--%>
+<%--								</a>--%>
+<%--							</li>--%>
+<%--							<li>--%>
+<%--								<a href="institutionInfo/doInstitutionInfoManagerUI1.shtml" target="iframe">--%>
+<%--									<i class="fa fa-circle-o"></i>城市风险信息查询--%>
+<%--								</a>--%>
+<%--							</li>--%>
+<%--						</ul>--%>
+<%--					</li>	--%>
+<%--					--%>
+<%--				</ul>--%>
+<%--			</li>--%>
 
 <!--
 			 <li class="treeview"><a href="#"> <i class="fa fa-share"></i>

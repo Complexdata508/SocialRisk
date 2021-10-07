@@ -30,7 +30,7 @@
 					
 					<div id="profile" class="tab-pane  active" >
 						<form class="sui-form" action="doLogin.shtml" method="post">
-							<div class="input-prepend"><span class="add-on loginname"></span>
+							<div class="input-prepend"><span class="add-on "></span>
 								<input id="prependedInput" type="text" placeholder="用户名" class="span2 input-xfat"  required="required" name="username">
 							</div>
 							<div class="input-prepend"><span class="add-on loginpwd"></span>
@@ -68,9 +68,9 @@
 
 </body>
 <style>
-	loginname{
-		background-image:url(./img/bussiness-man.png);background-position:-10px -201px
-	}
+	/*loginname{*/
+	/*	background-image:url(./img/bussiness-man.png);background-position:10px 201px*/
+	/*}*/
 </style>
 <script type="text/javascript">
 	window.onload=function(){

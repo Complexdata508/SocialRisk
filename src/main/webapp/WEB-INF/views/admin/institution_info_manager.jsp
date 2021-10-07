@@ -61,16 +61,18 @@
                                     <div class="btn-group">
                                         <button type="button" class="btn btn-default" title="导入" data-toggle="modal" data-target="#excelInfoImport" ng-click="entity={}"><i class="fa fa-file-o"></i> 导入</button>
                                         <button type="button" class="btn btn-default" title="删除" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash-o"></i> 删除</button>
-                                        <button type="button" class="btn btn-default" title="刷新" onclick="window.location.reload();"><i class="fa fa-refresh"></i> 刷新</button>
+                                        <a type="button" class="btn btn-default" title="刷新" href="/SocialRisk/institutionInfo/doInstitutionInfoManagerUI/1.shtml"><i class="fa fa-refresh"></i> 刷新</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="box-tools pull-right">
-                               <div class="has-feedback">
-<%--							        <input ng-model="logno" placeholder="流水号"> --%>
-							        <input ng-model="institutionNo" placeholder="城市名称">
-							        <button class="btn btn-default btn-search" >查询</button>
-                                </div> 
+								<form action="http://localhost:8080/SocialRisk/institutionInfo/seleteCityByName.shtml">
+									<div class="has-feedback">
+										<%--							        <input ng-model="logno" placeholder="流水号"> --%>
+										<input ng-model="institutionNo" placeholder="城市名称" name="name">
+										<button class="btn btn-default btn-search" ng-click="  ">查询</button>
+									</div>
+								</form>
                             </div>
                             <!--工具栏/-->
 
@@ -79,7 +81,7 @@
 			                      <thead>
 			                          <tr>
 			                              <th class="" style="padding-right:0px">
-			                                  <input id="institutionInfoAll" type="checkbox" class="icheckbox_square-blue" >
+
 			                              </th>
 										  <th class="sorting">城市</th>
 										  <th class="sorting">风险等级</th>
@@ -88,8 +90,8 @@
 									      <th class="sorting">社会公平指标</th>
 									      <th class="sorting">社会秩序指标</th>
 									      <th class="sorting">社会安全指标</th>
-					                      <th class="text-center">社会舆情指标</th>
-					                      <th class="text-center">建筑物分级指标</th>
+
+										  <th class="text-center">风险等级查询</th>
 					                      <th class="text-center">操作</th>
 			                          </tr>
 			                      </thead>
@@ -97,18 +99,20 @@
 								  <c:forEach items="${cityList}" var="City" varStatus="id">
 			                          <tr >
 			                              <td><input class="institutionInfoCheckBox" type="checkbox" name="checkDelete" value="${cityList.get(id.index).id}"></td>
-				                          <td>${City.name}</td>
-									      <td>${City.name}</td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-									      <td></td>
-		                                  <td></td>
-		                                  <td class="text-center">
-		                                 	  <a type="button" class="btn bg-olive btn-xs " href="toCityInfo/${id.index}.shtml" >修改</a>
-											  <button type="button" class="btn bg-primary btn-xs" data-toggle="modal" data-target="#editModal" >详情</button>
+<%--										  <td>${City.id}</td>--%>
+										  <td>${City.name}</td>
+										  <td>${City.unemploymentRate}</td>
+										  <td>${City.endowmentInsuranceCoverage}</td>
+										  <td>${City.maternityInsuranceCoverage}</td>
+										  <td>${City.industrialInjuryInsuranceCoverage}</td>
+										  <td>${City.medicalInsuranceCoverage}</td>
+										  <td>${City.unemploymentInsuranceCoverage}</td>
+										  <td class="text-center">
+											  <a type="button" class="btn bg-olive btn-xs " href="/SocialRisk/institutionInfo/seleteCityRisk/${cityList.get(id.index).id}.shtml">查询</a>
+										  </td>
+										  <td class="text-center">
+											  <a type="button" class="btn bg-olive btn-xs " href="/SocialRisk/institutionInfo/toCityInfo/${cityList.get(id.index).id}.shtml" >修改</a>
+											  <a type="button" class="btn bg-primary btn-xs"  href= "/SocialRisk/institutionInfo/toCityInfochakan/${cityList.get(id.index).id}.shtml" >详情</a>
 										  </td>
 			                          </tr>
 								  </c:forEach>
@@ -116,26 +120,27 @@
 			                  </table>
 			                  <!--数据列表/--> 
 			                  <!--分页 paginationConf -->
-							<div style="text-align: center">
+							<c:set var="pageNum" value="${pageNum}"></c:set>
+							<c:if test="${totalPageNum>0}">
+							<div style="text-align: center" >
 								<ul class="pagination">
 									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Previous">
+										<a class="page-link" href="${isHasPre?pageNum-1:1}.shtml" aria-label="Previous">
 											<span aria-hidden="true">&laquo;</span>
 											<span class="sr-only">Previous</span>
 										</a>
 									</li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link">共<jsp:text>${totalPageNum}</jsp:text>页</a></li>
 									<li class="page-item">
-										<a class="page-link" href="#" aria-label="Next">
+										<a class="page-link" href="${isHasNext?pageNum+1:totalPageNum}.shtml" aria-label="Next">
 											<span aria-hidden="true">&raquo;</span>
 											<span class="sr-only">Next</span>
 										</a>
 									</li>
 								</ul>
+
 							</div>
-							  
+							</c:if>
                         </div>
                         <!-- 数据表格 /-->
                      </div>
@@ -223,13 +228,44 @@
 
 </body>
 
-<script>
-	function detailsClick(i){
-		console.log(i)
-		var city =  "${cityList.get(i)}";
-		"${city =  cityList.get(i)}"
-		console.log(city)
+<style>
+	ul.pagination3 {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
 	}
+
+	ul.pagination3 li {display: inline;}
+
+	ul.pagination3 li a {
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .3s;
+		border: 1px solid #ddd;
+		font-size: 18px;
+	}
+	ul.pagination3 li sapn {
+		color: black;
+		float: left;
+		padding: 8px 16px;
+		text-decoration: none;
+		transition: background-color .3s;
+		border: 1px solid #ddd;
+		font-size: 18px;
+	}
+
+	ul.pagination3 li a:hover:not(.active) {background-color: #ddd}
+</style>
+
+<script>
+	<%--function detailsClick(i){--%>
+	<%--	console.log(i)--%>
+	<%--	var city =  "${cityList.get(i)}";--%>
+	<%--	"${city =  cityList.get(i)}"--%>
+	<%--	console.log(city)--%>
+	<%--}--%>
 </script>
 <script type="text/javascript">
 	$(function(){
@@ -242,7 +278,7 @@
 			showPreview: true, // 显示预览信息： true 显示 , false 不显示
 			showCancel:false,   //是否显示文件上传取消按钮。默认为true。只有在AJAX上传过程中，才会启用和显示
 			showCaption: true, // 显示标题：true 显示 , false 不显示
-			uploadUrl: 'receiveFile.shtml', // 上传文件的url
+			uploadUrl: '/SocialRisk/institutionInfo/receiveFile.shtml', // 上传文件的url
 			allowedFileExtensions: ['xls', 'xlsx'], // 允许文件扩展名
 			browseClass: "btn btn-primary ",
 			// uploadExtraData: {kvId: '10'}, // 额外传输的参数
@@ -288,7 +324,7 @@
 
 
 		$.post({
-					url:"deleteRecords.shtml",
+					url:"/SocialRisk/institutionInfo/deleteRecords.shtml",
 					contentType:"application/x-www-form-urlencoded;charset=UTF-8",
 					data:{
 						// check_values:JSON.stringify(check_values)
