@@ -41,7 +41,7 @@
 
                 <!-- 统计数值 -->
                 <div class="row">
-                    <div class="col-lg-3 col-xs-6">
+                    <div class="col-lg-3 col-xs-5">
                         <!-- small box -->
                         <div class="small-box bg-aqua">
                             <div class="inner">
@@ -52,6 +52,19 @@
                                 <i class="ion ion-bag"></i>
                             </div>
                             <a href="institutionInfo/doInstitutionInfoManagerUI/1.shtml" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-xs-5">
+                        <!-- small box -->
+                        <div class="small-box bg-green">
+                            <div class="inner">
+                                <h4>注册用户：<jsp:text>${userCount}</jsp:text></h4>
+                                <p>用户信息</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="institutionInfo/doUserInfoManagerUI/1.shtml" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
