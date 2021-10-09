@@ -9,7 +9,7 @@
     <!-- 页面meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>机构信息管理</title>
+    <title>用户信息管理</title>
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
     <link rel="stylesheet" href="/SocialRisk/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/SocialRisk/plugins/adminLTE/css/AdminLTE.css">
@@ -93,9 +93,20 @@
                         <%--										  <td>${City.id}</td>--%>
                     <td>${User.username}</td>
                     <td>${User.password}</td>
-                    <td>${User.admin}</td>
+                    <c:choose>
+                        <c:when test="${User.admin==1}">
+                            <td>管理员</td>
+                        </c:when>
+                        <c:otherwise>
+                            <td>普通用户</td>
+                        </c:otherwise>
+                    </c:choose>
+<%--                    <td><jsp:text>${User.admin}</jsp:text></td>--%>
                     <td class="text-center">
                         <a type="button" class="btn bg-olive btn-xs " href="/SocialRisk/institutionInfo/deleteUser/${User.uid}.shtml">删除</a>
+                        <c:if test="${User.admin==0}">
+                            <a type="button" class="btn bg-primary btn-xs " href="/SocialRisk/institutionInfo//${User.uid}.shtml">设置管理员</a>
+                        </c:if>
                     </td>
                 </tr>
             </c:forEach>

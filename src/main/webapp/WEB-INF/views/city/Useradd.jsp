@@ -45,7 +45,7 @@
             </tr>
             <tr>
               <td>密码</td>
-              <td><input  class="form-control" placeholder="密码"  name="password">  </td>
+              <td><input  type="password" class="form-control" placeholder="密码"  name="password">  </td>
             </tr>
             <tr>
               <div style="text-align: center">

@@ -49,9 +49,24 @@ public class AdminController {
         return "city/UserInfo";
     }
     @RequestMapping("/institutionInfo/deleteUser/{UserId}")
-    public String doUserInfoManagerUI(@PathVariable("UserId") String uid){
+    public String doUserInfoManagerUI(@PathVariable("UserId") String uid ,Model model){
         userService.deleteUser(uid);
-        return "city/UserInfo";
+//        return "redirect: doUserInfoManagerUI/1.shtml";
+        Integer pageNum = 1;
+        if(pageNum==null){
+            pageNum =1;
+        }
+        int pageSize = 10;
+
+        PageInfo<User> allUserinfo = userService.getAllUserinfo(pageNum, pageSize);
+
+        List<User> userList = allUserinfo.getList();
+        model.addAttribute("userList",userList);
+        model.addAttribute("pageNum",allUserinfo.getPageNum());
+        model.addAttribute("totalPageNum",allUserinfo.getPages());
+        model.addAttribute("isHasNext",allUserinfo.isHasNextPage());
+        model.addAttribute("isHasPre",allUserinfo.isHasPreviousPage());
+        return  "city/UserInfo";
     }
     @RequestMapping("/institutionInfo/addUserInfoManagerUI")
     public String addUserInfoManagerUI(){
@@ -61,6 +76,6 @@ public class AdminController {
     @RequestMapping("/institutionInfo/addUser")
     public String addUser(User user){
         userService.addUser(user);
-        return "city/UserInfo";
+        return "redirect: doUserInfoManagerUI/1.shtml";
     }
 }
