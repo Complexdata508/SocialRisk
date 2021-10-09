@@ -53,4 +53,14 @@ public class AdminController {
         userService.deleteUser(uid);
         return "city/UserInfo";
     }
+    @RequestMapping("/institutionInfo/addUserInfoManagerUI")
+    public String addUserInfoManagerUI(){
+
+        return "city/Useradd";
+    }
+    @RequestMapping("/institutionInfo/addUser")
+    public String addUser(User user){
+        userService.addUser(user);
+        return "city/UserInfo";
+    }
 }

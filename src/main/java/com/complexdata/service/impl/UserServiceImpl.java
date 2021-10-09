@@ -1,5 +1,7 @@
 package com.complexdata.service.impl;
 
+import cn.hutool.core.util.IdUtil;
+import cn.hutool.crypto.digest.DigestUtil;
 import com.complexdata.mapper.UserMapper;
 import com.complexdata.model.City;
 import com.complexdata.model.User;
@@ -27,6 +29,15 @@ public class UserServiceImpl implements UserService {
         User user=new User();
             int count = userMapper.selectCount(user);
             return count;
+    }
+
+    @Override
+    public void addUser(User user) {
+        String uid = IdUtil.randomUUID();
+        user.setUid(uid);
+        String password = DigestUtil.md5Hex(user.getPassword());
+        user.setPassword(password);
+        userMapper.insert(user);
     }
 
     @Override

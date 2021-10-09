@@ -56,15 +56,14 @@
     <div class="table-box">
 
         <!--工具栏-->
-<%--        <div class="pull-left">--%>
-<%--            <div class="form-group form-inline">--%>
-<%--                <div class="btn-group">--%>
-<%--                    <button type="button" class="btn btn-default" title="导入" data-toggle="modal" data-target="#excelInfoImport" ng-click="entity={}"><i class="fa fa-file-o"></i> 导入</button>--%>
-<%--                    <button type="button" class="btn btn-default" title="删除" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash-o"></i> 删除</button>--%>
-<%--                    <a type="button" class="btn btn-default" title="刷新" href="/SocialRisk/institutionInfo/doInstitutionInfoManagerUI/1.shtml"><i class="fa fa-refresh"></i> 刷新</a>--%>
-<%--                </div>--%>
-<%--            </div>--%>
-<%--        </div>--%>
+       <div class="pull-left">
+           <div class="form-group form-inline">
+               <div class="btn-group">
+                   <a type="button" class="btn btn-default" title="新增" href="/SocialRisk/institutionInfo/addUserInfoManagerUI.shtml"> 新增</a>
+               <a type="button" class="btn btn-default" title="刷新" href="/SocialRisk/institutionInfo/doUserInfoManagerUI/1.shtml"><i class="fa fa-refresh"></i> 刷新</a>
+               </div>
+           </div>
+       </div>
 <%--        <div class="box-tools pull-right">--%>
 <%--            <form action="http://localhost:8080/SocialRisk/institutionInfo/seleteCityByName.shtml">--%>
 <%--                <div class="has-feedback">--%>

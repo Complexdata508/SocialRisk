@@ -8,5 +8,6 @@ public interface UserService {
     public PageInfo<User> getAllUserinfo(int pageNum, int size);
     int getUserCount();
 
+    void addUser(User user);
     void deleteUser(String uid);
 }

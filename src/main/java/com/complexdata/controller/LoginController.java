@@ -1,5 +1,6 @@
 package com.complexdata.controller;
 
+import com.complexdata.mapper.UserMapper;
 import com.complexdata.model.User;
 import com.complexdata.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class LoginController {
 
     @Autowired
     LoginService loginService;
+    @Autowired
+    UserMapper userMapper;
     @RequestMapping(value = "/doLogin",method = RequestMethod.POST)
     public String doLogin(User user, Model model, HttpSession httpSession){
         if(user.getPassword().isEmpty()||user.getUsername().isEmpty()){
@@ -24,7 +27,11 @@ public class LoginController {
             return "forward:/";
         }
         else if(loginService.userLogin(user)) {
+            User searchUser = new User();
+            searchUser.setUsername(user.getUsername());
+            User getUser = userMapper.selectOne(searchUser);
             httpSession.setAttribute("loginUser",user);
+            httpSession.setAttribute("getUser", getUser);
             httpSession.removeAttribute("status");
             return "admin/index";
         }
