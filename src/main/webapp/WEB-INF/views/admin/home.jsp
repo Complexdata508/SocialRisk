@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,7 +42,7 @@
 
                 <!-- 统计数值 -->
                 <div class="row">
-                    <div class="col-lg-3 col-xs-6">
+                    <div class="col-lg-3 col-xs-5">
                         <!-- small box -->
                         <div class="small-box bg-aqua">
                             <div class="inner">
@@ -54,6 +55,22 @@
                             <a href="institutionInfo/doInstitutionInfoManagerUI/1.shtml" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+                    <c:if test="${getUser.admin==1}">
+                        <div class="col-lg-3 col-xs-5">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h4>注册用户：<jsp:text>${userCount}</jsp:text></h4>
+                                    <p>用户信息</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="institutionInfo/doUserInfoManagerUI/1.shtml" class="small-box-footer">详细 <i class="fa fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                    </c:if>
+
                     <!-- ./col -->
 <%--                    <div class="col-lg-3 col-xs-6">--%>
 <%--                        <!-- small box -->--%>

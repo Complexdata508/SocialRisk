@@ -189,7 +189,10 @@
 						href="institutionInfo/doInstitutionInfoManagerUI/1.shtml"
 						target="iframe"> <i class="fa fa-exclamation-triangle"></i>城市风险信息管理
 					</a></li>
-
+<%--					<li id="admin-login"><a--%>
+<%--							href="institutionInfo/doInstitutionInfoManagerUI/1.shtml"--%>
+<%--							target="iframe"> <i class="fa fa-exclamation-triangle"></i>用户管理--%>
+<%--					</a></li>--%>
 					
 				</ul></li>
 				
