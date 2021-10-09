@@ -179,7 +179,7 @@
 
 			<!-- 菜单 -->
 			<li class="treeview"><a href="#"> <i class="fa fa-info"></i>
-					<span>社会风险指数模型管理</span> <span class="pull-right-container">
+					<span>社会风险指数管理</span> <span class="pull-right-container">
 						<i class="fa fa-angle-left pull-right"></i>
 				</span>
 			</a>

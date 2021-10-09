@@ -59,9 +59,12 @@
                             <div class="pull-left">
                                 <div class="form-group form-inline">
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-default" title="导入" data-toggle="modal" data-target="#excelInfoImport" ng-click="entity={}"><i class="fa fa-file-o"></i> 导入</button>
+                                        <button type="button" class="btn btn-default " title="导入" data-toggle="modal" data-target="#excelInfoImport" ng-click="entity={}"><i class="fa fa-file-o"></i> 导入</button>
                                         <button type="button" class="btn btn-default" title="删除" data-toggle="modal" data-target="#confirmModal"><i class="fa fa-trash-o"></i> 删除</button>
+<%--										<button  class="btn btn-default"  onclick="downloadTemplate()" ><i class="fa fa-refresh"></i>模板</button>--%>
+										<a type="button" class="btn btn-default" title="刷新" href="/SocialRisk/institutionInfo/getTemplate.shtml"><i class="fa fa-refresh"></i> 模板</a>
                                         <a type="button" class="btn btn-default" title="刷新" href="/SocialRisk/institutionInfo/doInstitutionInfoManagerUI/1.shtml"><i class="fa fa-refresh"></i> 刷新</a>
+
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +84,8 @@
 			                      <thead>
 			                          <tr>
 			                              <th class="" style="padding-right:0px">
-
+<%--											<button class="btn-sm primary">全选</button>--%>
+										  <input id="checkAll"  type="checkbox"   >
 			                              </th>
 										  <th class="sorting">城市</th>
 										  <th class="sorting">风险等级</th>
@@ -335,5 +339,49 @@
 			}
 		);
 	};
+
+	function downloadTemplate() {
+		console.log("hahha");
+		$.get({
+					url:"/SocialRisk/institutionInfo/getTemplate.shtml",
+					contentType:"application/x-www-form-urlencoded;charset=UTF-8",
+					// data:{
+					// 	// check_values:JSON.stringify(check_values)
+					// 	check_values:passData
+					// },
+					dataType : "json",
+					// success:getResult,
+				}
+		);
+	}
+
+	function checkClickFunc () {
+		console.log("enter click!")
+		// var status = thi
+		console.log($("#checkAll").is(':checked'))
+		if($("#checkAll").is(':checked'))
+			$("input[name='checkDelete']:checkbox").each(function() { //遍历所有的name为selectFlag的 checkbox
+				$(this).attr("checked", true);
+			})
+		else
+			$("input[name='checkDelete']:checkbox").each(function() { //遍历所有的name为selectFlag的 checkbox
+				$(this).attr("checked", false);
+			})
+	}
+	$("#checkAll").click(function() {
+		if (this.checked) {
+			$("input[name='checkDelete']:checkbox").each(function() { //遍历所有的name为selectFlag的 checkbox
+				console.log("处理每一个checkbox")
+				$(this).attr("checked", true);
+
+			})
+		} else {   //反之 取消全选
+			$("input[name='checkDelete']:checkbox").each(function() { //遍历所有的name为selectFlag的 checkbox
+				$(this).attr("checked", false);
+				//alert("f");
+			})
+		}
+	})
+
 </script>
 </html>
