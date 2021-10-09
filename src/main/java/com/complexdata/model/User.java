@@ -9,6 +9,17 @@ public class User {
     private String username;
     private String password;
 
+    private Integer admin;
+    public Integer getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Integer admin) {
+        this.admin = admin;
+    }
+
+
+
     public String getUid() {
         return uid;
     }
@@ -39,6 +50,7 @@ public class User {
                 "uid='" + uid + '\'' +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", admin=" + admin +
                 '}';
     }
 }

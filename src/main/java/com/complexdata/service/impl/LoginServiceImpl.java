@@ -19,8 +19,10 @@ public class LoginServiceImpl implements LoginService {
         User searchUser = new User();
         searchUser.setUsername(user.getUsername());
         User getUser = userMapper.selectOne(searchUser);
-        if(getUser==null)
+        if(getUser==null) {
+            System.out.println("未查询到相关用户");
             return false;
+        }
 
         if(getUser.getPassword().equals(DigestUtil.md5Hex(user.getPassword())))//判断密码是否相同
             return true;
@@ -43,6 +45,8 @@ public class LoginServiceImpl implements LoginService {
         insertUser.setUsername(user.getUsername());
         insertUser.setUid(uid);
         insertUser.setPassword(password);
+//      注册的用户设置为普通用户
+        insertUser.setAdmin(0);
 
         userMapper.insert(insertUser);
         return true;

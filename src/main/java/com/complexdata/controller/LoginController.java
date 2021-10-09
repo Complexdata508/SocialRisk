@@ -41,7 +41,7 @@ public class LoginController {
 
     @RequestMapping("/toRegister")
     public String toRegister(){
-        return "register";
+        return "login/register";
     }
 
     @RequestMapping("/doRegister")
@@ -57,6 +57,11 @@ public class LoginController {
         return "redirect:/";
     }
 
+
+//    @RequestMapping("/toRegister")
+//    public String toRegister(){
+//        return "login/register";
+//    }
 
 
 }
